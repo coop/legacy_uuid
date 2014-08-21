@@ -1,0 +1,6 @@
+#!/bin/bash
+
+BUNDLE_PATH=vendor/bundle
+
+bundle check --path "$BUNDLE_PATH" || bundle install --path "$BUNDLE_PATH"
+bin/rake
