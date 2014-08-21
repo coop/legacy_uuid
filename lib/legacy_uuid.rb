@@ -4,7 +4,7 @@ module LegacyUUID
   REGIONS = {
     au: 1,
     nz: 2,
-    gb: 3,
+    uk: 3,
     us: 4,
   }
 
