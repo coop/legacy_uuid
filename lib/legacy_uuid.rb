@@ -5,6 +5,7 @@ module LegacyUUID
     au: 1,
     nz: 2,
     uk: 3,
+    gb: 3,
     us: 4,
   }
 
