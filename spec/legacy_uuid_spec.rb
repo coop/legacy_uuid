@@ -27,5 +27,12 @@ describe LegacyUUID do
 
       expect(uuid).to eq(expected_uuid)
     end
+
+    it "treats gb and uk as the same" do
+      gb_uuid = LegacyUUID.from_charity("gb-123")
+      uk_uuid = LegacyUUID.from_charity("uk-123")
+
+      expect(gb_uuid).to eq uk_uuid
+    end
   end
 end
