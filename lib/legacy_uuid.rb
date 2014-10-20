@@ -7,6 +7,7 @@ module LegacyUUID
     uk: 3,
     gb: 3,
     us: 4,
+    ie: 5,
   }
 
   def self.region_component(region)
