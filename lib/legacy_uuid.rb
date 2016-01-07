@@ -34,4 +34,8 @@ module LegacyUUID
   def self.from_page(uid)
     from(uid, prefix: "edc1e64c")
   end
+
+  def self.from_team(uid)
+    from(uid, prefix: "edd1e64c")
+  end
 end

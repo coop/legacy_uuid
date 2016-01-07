@@ -21,7 +21,8 @@ Or install it yourself as:
 ```ruby
 LegacyUUID.from_campaign("au-123") # => "eda1e64c-0001-4000-8000-00000000007b"
 LegacyUUID.from_charity("au-123")  # => "edb1e64c-0001-4000-8000-00000000007b"
-LegacyUUID.from_page("au-123")  # => "edc1e64c-0001-4000-8000-00000000007b"
+LegacyUUID.from_page("au-123")     # => "edc1e64c-0001-4000-8000-00000000007b"
+LegacyUUID.from_team("au-123")     # => "edd1e64c-0001-4000-8000-00000000007b"
 ```
 
 ## Contributing

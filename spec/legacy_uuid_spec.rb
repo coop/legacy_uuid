@@ -45,4 +45,14 @@ describe LegacyUUID do
       expect(uuid).to eq(expected_uuid)
     end
   end
+
+  context ".from_team" do
+    it "uses a prefinded prefix" do
+      uuid = LegacyUUID.from_team("au-123")
+
+      expected_uuid = "edd1e64c-0001-4000-8000-00000000007b"
+
+      expect(uuid).to eq(expected_uuid)
+    end
+  end
 end
