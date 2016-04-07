@@ -2,12 +2,12 @@ require "legacy_uuid/version"
 
 module LegacyUUID
   REGIONS = {
-    au: 1,
-    nz: 2,
-    uk: 3,
-    gb: 3,
-    us: 4,
-    ie: 5,
+    :au => 1,
+    :nz => 2,
+    :uk => 3,
+    :gb => 3,
+    :us => 4,
+    :ie => 5,
   }
 
   def self.region_component(region)
@@ -18,24 +18,38 @@ module LegacyUUID
     id.to_i.to_s(16).rjust(12, "0")
   end
 
-  def self.from(uid, prefix:)
+  def self.from(uid, options = {})
+    prefix = options.fetch(:prefix)
     region, id = uid.split("-")
+
     "#{prefix}-#{region_component(region)}-4000-8000-#{id_component(id)}"
   end
 
   def self.from_campaign(uid)
-    from(uid, prefix: "eda1e64c")
+    from(uid, :prefix => "eda1e64c")
   end
 
   def self.from_charity(uid)
-    from(uid, prefix: "edb1e64c")
+    from(uid, :prefix => "edb1e64c")
   end
 
   def self.from_page(uid)
-    from(uid, prefix: "edc1e64c")
+    from(uid, :prefix => "edc1e64c")
+  end
+
+  def self.from_hero_page(uid)
+    from(uid, :prefix => "ede1e64c")
   end
 
   def self.from_team(uid)
-    from(uid, prefix: "edd1e64c")
+    from(uid, :prefix => "edd1e64c")
+  end
+
+  def self.from_donation(uid)
+    from(uid, :prefix => "eaa1e64c")
+  end
+
+  def self.from_donor(uid)
+    from(uid, :prefix => "eab1e64c")
   end
 end
