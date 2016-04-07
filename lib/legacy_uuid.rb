@@ -37,6 +37,10 @@ module LegacyUUID
     from(uid, :prefix => "edc1e64c")
   end
 
+  def self.from_hero_page(uid)
+    from(uid, :prefix => "ede1e64c")
+  end
+
   def self.from_team(uid)
     from(uid, :prefix => "edd1e64c")
   end
