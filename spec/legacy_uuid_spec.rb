@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe LegacyUUID do
   it "should generate predicatable UUIDs from a legacy uid" do
-    uuid = LegacyUUID.from("au-123", prefix: "ehc1e64c")
+    uuid = LegacyUUID.from("au-123", :prefix => "ehc1e64c")
 
     expected_uuid = "ehc1e64c-0001-4000-8000-00000000007b"
 
