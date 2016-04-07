@@ -44,4 +44,12 @@ module LegacyUUID
   def self.from_team(uid)
     from(uid, :prefix => "edd1e64c")
   end
+
+  def self.from_donation(uid)
+    from(uid, :prefix => "eaa1e64c")
+  end
+
+  def self.from_donor(uid)
+    from(uid, :prefix => "eab1e64c")
+  end
 end
