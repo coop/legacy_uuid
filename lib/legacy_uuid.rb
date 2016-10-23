@@ -18,6 +18,7 @@ module LegacyUUID
     :team =>      "edd1e64c",
     :donation =>  "eaa1e64c",
     :donor =>     "eab1e64c",
+    :organiser => "eac1e64c",
   }
 
   def self.region_component(region)
@@ -61,6 +62,10 @@ module LegacyUUID
 
   def self.from_donor(uid)
     from(uid, :donor)
+  end
+
+  def self.from_organiser(uid)
+    from(uid, :organiser)
   end
 
   def self.type_of(uuid)
