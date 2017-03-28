@@ -58,6 +58,15 @@ describe LegacyUUID do
     end
   end
 
+  context ".from_organiser uuid format" do
+    it "uses a predefined prefix" do
+      uid = "eac1e64c-0001-4000-8888-00000000007b"
+      expected_uuid = LegacyUUID.from_organiser(uid)
+
+      expect(uid).to eq(expected_uuid)
+    end
+  end
+
   it "can reverse things" do
     gb_uuid = LegacyUUID.from_charity("gb-123")
 

@@ -1,6 +1,8 @@
 require "legacy_uuid/version"
 
 module LegacyUUID
+  UID_REGEX = /[a-z]{2}-\d+/
+
   REGIONS = {
     :au => 1,
     :nz => 2,
@@ -65,6 +67,8 @@ module LegacyUUID
   end
 
   def self.from_organiser(uid)
+    return uid if uid !~ UID_REGEX
+
     from(uid, :organiser)
   end
 
