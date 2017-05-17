@@ -58,6 +58,16 @@ describe LegacyUUID do
     end
   end
 
+  context ".from_offline_donation" do
+    it "uses a predefined prefix" do
+      uuid = LegacyUUID.from_offline_donation("au-123")
+
+      expected_uuid = "ead1e64c-0001-4000-8000-00000000007b"
+
+      expect(uuid).to eq(expected_uuid)
+    end
+  end
+
   it "can reverse things" do
     gb_uuid = LegacyUUID.from_charity("gb-123")
 
