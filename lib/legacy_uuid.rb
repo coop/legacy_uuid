@@ -11,14 +11,15 @@ module LegacyUUID
   }
 
   PREFIXES = {
-    :campaign =>  "eda1e64c",
-    :charity =>   "edb1e64c",
-    :page =>      "edc1e64c",
-    :hero_page => "ede1e64c",
-    :team =>      "edd1e64c",
-    :donation =>  "eaa1e64c",
-    :donor =>     "eab1e64c",
-    :organiser => "eac1e64c",
+    :campaign =>         "eda1e64c",
+    :charity =>          "edb1e64c",
+    :page =>             "edc1e64c",
+    :hero_page =>        "ede1e64c",
+    :team =>             "edd1e64c",
+    :donation =>         "eaa1e64c",
+    :donor =>            "eab1e64c",
+    :organiser =>        "eac1e64c",
+    :offline_donation => "ead1e64c",
   }
 
   def self.region_component(region)
@@ -66,6 +67,10 @@ module LegacyUUID
 
   def self.from_organiser(uid)
     from(uid, :organiser)
+  end
+
+  def self.from_offline_donation(uid)
+    from(uid, :offline_donation)
   end
 
   def self.type_of(uuid)
