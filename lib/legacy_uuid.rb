@@ -83,9 +83,11 @@ module LegacyUUID
   end
 
   def self.uid_of(uuid)
-    prefix, region, _, _, id = uuid.split("-")
+    _, region, _, _, id = uuid.split("-")
 
     region_code = REGIONS.invert[region.to_i]
+    # REGIONS.invert is non-deterministic for gb/uk - this forces gb
+    region_code = "gb" if region_code == "uk"
     id = id.to_i(16)
 
     "#{region_code}-#{id}"
