@@ -10,6 +10,14 @@ module LegacyUUID
     :ie => 5,
   }
 
+  REGION_CODES = {
+    1 => :au,
+    2 => :nz,
+    3 => :gb,
+    4 => :us,
+    5 => :ie,
+  }
+
   PREFIXES = {
     :campaign =>         "eda1e64c",
     :charity =>          "edb1e64c",
@@ -85,9 +93,7 @@ module LegacyUUID
   def self.uid_of(uuid)
     _, region, _, _, id = uuid.split("-")
 
-    region_code = REGIONS.invert[region.to_i]
-    # REGIONS.invert is non-deterministic for gb/uk - this forces gb
-    region_code = "gb" if region_code == "uk"
+    region_code = REGION_CODES[region.to_i]
     id = id.to_i(16)
 
     "#{region_code}-#{id}"
